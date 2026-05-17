@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ml5.js チュートリアル サンプル集</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>ml5.js チュートリアル サンプル集</h1>
+      <p>河合勝彦『ml5.js チュートリアル』掲載コードの動作デモ集 · ml5.js v1.3.1</p>
+    </header>
+
+    <div class="intro">
+      <p>このページは GitHub Pages 上で動作する 19 サンプル一覧です。各カードをクリックすると単独で動作する HTML が開きます。ウェブカメラ/マイク使用のサンプルではブラウザの許可ダイアログに「許可」と答えてください。</p>
+      <p>凡例: <span class="tag cam">📷 カメラ</span> <span class="tag mic">🎤 マイク</span> <span class="tag image">🖼 画像</span> <span class="tag train">🧠 ブラウザ学習</span></p>
+
+      <h2>導入</h2>
+    </div>
+    <div class="grid">
+      <div class="card"><span class="num">01</span><a href="examples/01-version-check/">ml5.js バージョン確認</a>
+        <p class="desc">ml5.version をキャンバスに表示する最小サンプル。</p></div>
+      <div class="card"><span class="num">02</span><a href="examples/02-webcam-basic/">ウェブカメラ基本</a>
+        <p class="desc">createCapture(VIDEO) で映像をキャンバスに描画。<span class="tag cam">📷</span></p></div>
+    </div>
+
+    <div class="intro"><h2>学習済みモデル ── 画像</h2></div>
+    <div class="grid">
+      <div class="card"><span class="num">03</span><a href="examples/03-image-classifier-static/">静止画の画像分類</a>
+        <p class="desc">同梱の cat.jpg を MobileNet で分類。<span class="tag image">🖼</span></p></div>
+      <div class="card"><span class="num">04</span><a href="examples/04-image-classifier-webcam/">ウェブカメラ画像分類</a>
+        <p class="desc">カメラ映像を MobileNet でリアルタイム分類。<span class="tag cam">📷</span></p></div>
+    </div>
+
+    <div class="intro"><h2>学習済みモデル ── 姿勢・顔・身体</h2></div>
+    <div class="grid">
+      <div class="card"><span class="num">05</span><a href="examples/05-bodypose-keypoints/">BodyPose キーポイント</a>
+        <p class="desc">17 個の関節キーポイントを点で描画 (MoveNet)。<span class="tag cam">📷</span></p></div>
+      <div class="card"><span class="num">06</span><a href="examples/06-bodypose-skeleton/">BodyPose スケルトン</a>
+        <p class="desc">getSkeleton() の組で骨格を線描画。<span class="tag cam">📷</span></p></div>
+      <div class="card"><span class="num">07</span><a href="examples/07-bodypose-arm-angle/">右肘の角度計算</a>
+        <p class="desc">肩・肘・手首の 3 点から角度を計算。<span class="tag cam">📷</span></p></div>
+      <div class="card"><span class="num">08</span><a href="examples/08-handpose-fingertip/">HandPose 指先追跡</a>
+        <p class="desc">左右の人差し指の先端を色付きの円で表示。<span class="tag cam">📷</span></p></div>
+      <div class="card"><span class="num">09</span><a href="examples/09-handpose-pinch-draw/">ピンチで描画</a>
+        <p class="desc">親指と人差し指の距離 &lt; 40px で軌跡を残す。[C] でクリア。<span class="tag cam">📷</span></p></div>
+      <div class="card"><span class="num">10</span><a href="examples/10-facemesh-all-points/">FaceMesh 全点表示</a>
+        <p class="desc">顔の 468 ランドマークを点で表示。<span class="tag cam">📷</span></p></div>
+      <div class="card"><span class="num">11</span><a href="examples/11-facemesh-eye-mosaic/">目だけ匿名化</a>
+        <p class="desc">leftEye/rightEye のバウンディングボックスで目を黒く塗る。<span class="tag cam">📷</span></p></div>
+      <div class="card"><span class="num">12</span><a href="examples/12-bodyseg-background/">背景置換 (クロマキー)</a>
+        <p class="desc">SelfieSegmentation で人物を抜き出し緑バックに合成。<span class="tag cam">📷</span></p></div>
+      <div class="card"><span class="num">13</span><a href="examples/13-bodyseg-parts/">BodyPix 24 部位色分け</a>
+        <p class="desc">右手・左足・胴体など部位ごとに色分けマスク。<span class="tag cam">📷</span></p></div>
+    </div>
+
+    <div class="intro"><h2>学習済みモデル ── 音声・テキスト</h2></div>
+    <div class="grid">
+      <div class="card"><span class="num">14</span><a href="examples/14-soundclassifier-voice/">音声で円を上下に動かす</a>
+        <p class="desc">マイクに "up"/"down" と発音。SpeechCommands18w 利用。<span class="tag mic">🎤</span></p></div>
+      <div class="card"><span class="num">15</span><a href="examples/15-sentiment-slider/">感情極性スライダー</a>
+        <p class="desc">英文をタイプすると肯定度 (0〜1) がリアルタイム表示。</p></div>
+    </div>
+
+    <div class="intro"><h2>自前モデル学習 (ブラウザ内学習)</h2></div>
+    <div class="grid">
+      <div class="card"><span class="num">16</span><a href="examples/16-nn-color-classifier/">色名分類器 (分類)</a>
+        <p class="desc">9 件のサンプルで学習 → クリックした色を予測。<span class="tag train">🧠</span></p></div>
+      <div class="card"><span class="num">17</span><a href="examples/17-nn-housing-regression/">住宅価格 (回帰)</a>
+        <p class="desc">床面積と部屋数から価格を回帰予測。tfvis でグラフ表示。<span class="tag train">🧠</span></p></div>
+      <div class="card"><span class="num">18</span><a href="examples/18-nn-imageclass-webcam/">カメラ 2 クラス転移学習</a>
+        <p class="desc">[A] OK / [B] NG で撮影 → [T] 学習 → [P] 予測 → [S] 保存。<span class="tag cam">📷</span><span class="tag train">🧠</span></p></div>
+      <div class="card"><span class="num">19</span><a href="examples/19-neuroevolution-flappy/">神経進化 Flappy 風</a>
+        <p class="desc">50 個体が世代交代しながらパイプを潜り抜けることを学習。<span class="tag train">🧠</span></p></div>
+    </div>
+
+    <div class="intro">
+      <h2>注意</h2>
+      <ul>
+        <li>初回ロードでモデル DL に数秒〜数十秒かかります (TensorFlow.js 経由)。</li>
+        <li>カメラ/マイクは <code>https://</code> または <code>localhost</code> でのみ動作 (GitHub Pages は HTTPS なので OK)。</li>
+        <li>BodyPix・FaceMesh は WebGL 必須。古い GPU では動作しない場合があります。</li>
+        <li>17 (回帰) は <code>debug: true</code> で tfvis のグラフがブラウザ右側に表示されます。</li>
+        <li>ソース: <a href="https://github.com/katzkawai/kklab-ml5js-examples">GitHub リポジトリ</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
